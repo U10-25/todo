@@ -1,11 +1,12 @@
-import { useMemo, useState } from 'react'
-import { useLocalStorage } from './hooks/useLocalStorage'
-import { TodoForm } from './components/TodoForm'
-import { TodoList } from './components/TodoList'
-import { FilterBar } from './components/FilterBar'
-import './App.css'
+'use client'
 
-function App() {
+import { useMemo, useState } from 'react'
+import { useLocalStorage } from '../hooks/useLocalStorage'
+import { TodoForm } from '../components/TodoForm'
+import { TodoList } from '../components/TodoList'
+import { FilterBar } from '../components/FilterBar'
+
+export default function Home() {
   const [todos, setTodos] = useLocalStorage('todos', [])
   const [filter, setFilter] = useState('all')
 
@@ -69,5 +70,3 @@ function App() {
     </div>
   )
 }
-
-export default App
